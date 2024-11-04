@@ -1,0 +1,17 @@
+<div style="background-color: #212121">
+   <div *ngIf="!userAuth" class="login-background"
+    style="font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+    <h2 style="font-size: 40px; color: white;">Login</h2>
+    <form (ngSubmit)="setUserAuth()" class="form">
+
+      <input placeholder="Usuário" [(ngModel)]="username" name="username" class="input" type="text">
+        <input placeholder="Senha" class="input" type="password">
+    
+      <button>Login</button>
+    </form>
+</div>
+    <div *ngIf="userAuth"
+      style="background-color:  #212121; display: flex; height: 100vh; align-items: end; justify-content: center;">
+     <h1 style="color: aliceblue ;margin-bottom: 70px; font-family: monospace;">USUÁRIO CONECTADO: {{ username }}</h1>
+    </div>
+</div>
